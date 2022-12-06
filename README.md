@@ -58,6 +58,7 @@ npm ERR! }
 1. main.ts
 2. app.module.ts 
 - @module이라는 데코레이터를 볼 수 있다.   
+- 루트 모듈
 3. app.controller.ts   
 - @get이라는 데코레이터를 볼 수 있다.
 - appService의 getHello()를 리턴한다. 
@@ -67,4 +68,12 @@ npm ERR! }
 
 * 데코레이터 = Spring의 어노테이션 기능을 하는 것 같다.
 
-test 
+* 모듈이란 ? 
+- 한가지 역할을 하는 앱, 컴포넌트 요런 느낌
+
+## Controller
+- URL을 가져오고 함수 리턴(URL과 함수 매핑)
+- @Get (express의 Get라우터)
+- @Get("/hello")로 만든 함수는 localhost:3000/hello 에 해당되는 결과를 반환하게된다.   
+- 그냥 컨트롤러지뭐..
+
