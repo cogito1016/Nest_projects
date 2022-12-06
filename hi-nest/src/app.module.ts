@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { MoviesController } from './movies/movies.controller';
+import { MoviesService } from './movies/movies.service';
 
 //아래의 형태는 데코레이터.
 //Nest는 데코레이터와 함께한다.
@@ -7,7 +8,7 @@ import { MoviesController } from './movies/movies.controller';
 @Module({
   imports: [],
   controllers: [MoviesController],
-  providers: [],
+  providers: [MoviesService],
 })
 //AppModule은 속이 비어있는형태
 //본체는 위의 데코레이터에 있다.

@@ -92,7 +92,8 @@ npm ERR! }
 
 ## Service
 - Controller <-> 비지니스 로직 구분을 위한 단계
-- 실질적인 Function
+- 실질적인 Function, 비지니스로직
+* Single-Responsibility Principle을 따르자
 
 - - - 
 ## Generate 
@@ -104,7 +105,7 @@ npm ERR! }
 1. AppModule에 Controller 자동추가
 2. src/movies 디렉토리 자동생성
 3. src/movies/movies.controller.ts 파일 자동생성
-어썸하다.   
+* nest generate service 도 가능
 
 * Spec파일?
 테스트를 위한 파일. 일단 보류   

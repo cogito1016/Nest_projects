@@ -14,21 +14,23 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MoviesController = void 0;
 const common_1 = require("@nestjs/common");
+const movie_entity_1 = require("./entities/movie.entity");
+const movies_service_1 = require("./movies.service");
 let MoviesController = class MoviesController {
-    getMovies() {
-        return "Movies Movies~";
+    constructor(moviesService) {
+        this.moviesService = moviesService;
     }
-    getSearchedData(year) {
-        return `Search Result : ${year}`;
+    getMovies() {
+        return this.moviesService.getAll();
     }
     getOne(id, getData) {
-        return getData;
+        return this.moviesService.getOne(id);
     }
     create(createdData) {
-        return createdData;
+        return this.moviesService.create(createdData);
     }
     remove(id, deletedData) {
-        return Object.assign({ deletedMovieId: id }, deletedData);
+        return this.moviesService.deleteOne(id);
     }
     patch(id, updatedData) {
         return Object.assign({ updatedMovieId: id }, updatedData);
@@ -38,22 +40,15 @@ __decorate([
     (0, common_1.Get)(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
-    __metadata("design:returntype", String)
+    __metadata("design:returntype", Array)
 ], MoviesController.prototype, "getMovies", null);
-__decorate([
-    (0, common_1.Get)("/search"),
-    __param(0, (0, common_1.Query)('year')),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
-    __metadata("design:returntype", void 0)
-], MoviesController.prototype, "getSearchedData", null);
 __decorate([
     (0, common_1.Get)("/:id"),
     __param(0, (0, common_1.Param)("id")),
     __param(1, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String, Object]),
-    __metadata("design:returntype", String)
+    __metadata("design:returntype", movie_entity_1.Movie)
 ], MoviesController.prototype, "getOne", null);
 __decorate([
     (0, common_1.Post)(),
@@ -79,7 +74,8 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], MoviesController.prototype, "patch", null);
 MoviesController = __decorate([
-    (0, common_1.Controller)('movies')
+    (0, common_1.Controller)('movies'),
+    __metadata("design:paramtypes", [movies_service_1.MoviesService])
 ], MoviesController);
 exports.MoviesController = MoviesController;
 //# sourceMappingURL=movies.controller.js.map

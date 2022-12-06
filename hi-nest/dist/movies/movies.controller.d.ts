@@ -1,8 +1,11 @@
+import { Movie } from './entities/movie.entity';
+import { MoviesService } from './movies.service';
 export declare class MoviesController {
-    getMovies(): string;
-    getSearchedData(year: string): string;
-    getOne(id: string, getData: any): string;
-    create(createdData: any): any;
-    remove(id: string, deletedData: any): any;
+    private readonly moviesService;
+    constructor(moviesService: MoviesService);
+    getMovies(): Movie[];
+    getOne(id: string, getData: any): Movie;
+    create(createdData: any): void;
+    remove(id: string, deletedData: any): boolean;
     patch(id: string, updatedData: any): any;
 }
