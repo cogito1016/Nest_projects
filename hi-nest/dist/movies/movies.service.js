@@ -16,7 +16,7 @@ let MoviesService = class MoviesService {
         return this.movies;
     }
     getOne(id) {
-        const movie = this.movies.find(movie => movie.id === parseInt(id));
+        const movie = this.movies.find(movie => movie.id === id);
         if (!movie) {
             throw new common_1.NotFoundException(`Movie with id ${id} not found.`);
         }
@@ -24,7 +24,7 @@ let MoviesService = class MoviesService {
     }
     deleteOne(id) {
         this.getOne(id);
-        let deletedMovies = this.movies.filter((movie) => (parseInt(id) !== movie.id));
+        let deletedMovies = this.movies.filter((movie) => (id !== movie.id));
         let result = false;
         if (deletedMovies.length != this.movies.length) {
             this.movies = deletedMovies;

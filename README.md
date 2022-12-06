@@ -110,4 +110,24 @@ npm ERR! }
 * Spec파일?
 테스트를 위한 파일. 일단 보류   
 
+- - - 
+## Pipe
+- 유효성 검사용 파이프
+- 미들웨어
 
+1. install
+- npm install class-validator class-transformer 
+2. main.ts > app.useGlobalPipes(new ValidationPipe());
+3. DTO > @IsString() , @IsNumber(), @IsString({ each:true })
+* each옵션을 준 이유 => String[]이기 때문
+
+### ValidationPipe
+#### 옵션
+1. WhiteList - true로 설정하면 아무 데코레이터도 없는 어떠한 property의 object를 거릅니다.
+* 데코레이터에 해당되지 않는 데이터는 Validator에 도달하지 않는다.
+2. forbidNonWhiteListed - true를 하면 리퀘스트 자체를 막음
+
+* Id가 String인 이유는, URL로 보낸 데이터는 전부 String이기 때문
+- 근데 Entity는 number니까.. 번환이슈가 생김
+- 그럴때 필요한게 transform 옵션
+3. trnasform - true를 하면 유저들이 보낸 데이터를 실제 타입으로 변환함
