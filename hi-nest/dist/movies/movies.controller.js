@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.MoviesController = void 0;
 const common_1 = require("@nestjs/common");
 const create_movie_dto_1 = require("./dto/create-movie.dto");
+const update_movie_dto_1 = require("./dto/update-movie.dto");
 const movie_entity_1 = require("./entities/movie.entity");
 const movies_service_1 = require("./movies.service");
 let MoviesController = class MoviesController {
@@ -71,7 +72,7 @@ __decorate([
     __param(0, (0, common_1.Param)('id')),
     __param(1, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number, Object]),
+    __metadata("design:paramtypes", [Number, update_movie_dto_1.UpdateMovieDto]),
     __metadata("design:returntype", void 0)
 ], MoviesController.prototype, "patch", null);
 MoviesController = __decorate([

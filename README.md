@@ -131,3 +131,10 @@ npm ERR! }
 - 근데 Entity는 number니까.. 번환이슈가 생김
 - 그럴때 필요한게 transform 옵션
 3. trnasform - true를 하면 유저들이 보낸 데이터를 실제 타입으로 변환함
+
+- - - 
+## 부분타입
+1. install
+- npm install @nestjs/mapped-types (타입을 변환시키고 사용할 수 있게하는 패키지)
+2. UpdateMovieDto > extends PartialType()
+3. 부분타입은 베이스타입이 필요하므로 extends PartialType(CreateMovieDto)

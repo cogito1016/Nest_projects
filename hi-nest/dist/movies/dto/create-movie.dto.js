@@ -22,6 +22,7 @@ __decorate([
     __metadata("design:type", Number)
 ], CreateMovieDto.prototype, "year", void 0);
 __decorate([
+    (0, class_validator_1.IsOptional)(),
     (0, class_validator_1.IsString)({ each: true }),
     __metadata("design:type", Array)
 ], CreateMovieDto.prototype, "genres", void 0);
