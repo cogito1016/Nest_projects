@@ -29,6 +29,7 @@ https://nodejs.org/en/
 3. nest project setup   
 * nset new [project-name]   
 
+- - - 
 ### Nest Install Error   
 ```  
 npm ERR! code EACCES
@@ -48,12 +49,14 @@ npm ERR! }
 - npm install -g @nestjs/cli 시 mkdir명령어에 대한 권한문제 발생
 - sudo npm install -g @nestjs/cli로 해결
 
+- - - 
 ## Start
 1. cd ./[prject-name]   
 2. npm run start:dev   
 3. Check the website (url : localhost:3000)   
 4. We can check 'Hello World'   
 
+- - - 
 ## Check Default File
 1. main.ts
 2. app.module.ts 
@@ -71,6 +74,7 @@ npm ERR! }
 * 모듈이란 ? 
 - 한가지 역할을 하는 앱, 컴포넌트 요런 느낌
 
+- - - 
 ## App Module
 - 루트 모듈
 - 어플리케이션 접근점
@@ -79,8 +83,24 @@ npm ERR! }
 - URL을 가져오고 함수 리턴(URL과 함수 매핑)
 - @Get (express의 Get라우터)
 - @Get("/hello")로 만든 함수는 localhost:3000/hello 에 해당되는 결과를 반환하게된다.   
-- 그냥 컨트롤러지뭐..
 
 ## Service
 - Controller <-> 비지니스 로직 구분을 위한 단계
 - 실질적인 Function
+
+- - - 
+## Generate 
+- Nest 프로젝트 개발을 위한 커맨드 
+- Ex) 컨트롤러 생성
+1. nest generate controller ( = nest g co )
+2. input controller name
+* 그러면 벌어지는 일
+1. AppModule에 Controller 자동추가
+2. src/movies 디렉토리 자동생성
+3. src/movies/movies.controller.ts 파일 자동생성
+어썸하다.   
+
+* Spec파일?
+테스트를 위한 파일. 일단 보류   
+
+
