@@ -16,9 +16,14 @@ let MoviesService = class MoviesService {
         return this.movies;
     }
     getOne(id) {
-        return this.movies.find(movie => movie.id === parseInt(id));
+        const movie = this.movies.find(movie => movie.id === parseInt(id));
+        if (!movie) {
+            throw new common_1.NotFoundException(`Movie with id ${id} not found.`);
+        }
+        return movie;
     }
     deleteOne(id) {
+        this.getOne(id);
         let deletedMovies = this.movies.filter((movie) => (parseInt(id) !== movie.id));
         let result = false;
         if (deletedMovies.length != this.movies.length) {
@@ -29,6 +34,11 @@ let MoviesService = class MoviesService {
     }
     create(movieData) {
         this.movies.push(Object.assign({ id: this.movies.length + 1 }, movieData));
+    }
+    update(id, updatedData) {
+        const movie = this.getOne(id);
+        this.deleteOne(id);
+        this.movies.push(Object.assign(Object.assign({}, movie), updatedData));
     }
 };
 MoviesService = __decorate([

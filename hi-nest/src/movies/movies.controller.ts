@@ -5,7 +5,6 @@ import { MoviesService } from './movies.service';
 
 @Controller('movies')
 export class MoviesController {
-
     constructor(private readonly moviesService:MoviesService) {
     }
 
@@ -33,9 +32,6 @@ export class MoviesController {
     //patch - 리소스의 일부분만 업데이트
     @Patch('/:id')
     patch(@Param('id') id:string, @Body() updatedData){
-        return {
-            updatedMovieId: id,
-            ...updatedData
-        }
+        return this.moviesService.update(id, updatedData);
     }
 }

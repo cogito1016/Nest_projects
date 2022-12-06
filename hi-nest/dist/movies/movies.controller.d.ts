@@ -7,5 +7,5 @@ export declare class MoviesController {
     getOne(id: string, getData: any): Movie;
     create(createdData: any): void;
     remove(id: string, deletedData: any): boolean;
-    patch(id: string, updatedData: any): any;
+    patch(id: string, updatedData: any): void;
 }

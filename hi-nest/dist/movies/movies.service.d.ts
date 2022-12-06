@@ -5,4 +5,5 @@ export declare class MoviesService {
     getOne(id: string): Movie;
     deleteOne(id: string): boolean;
     create(movieData: any): void;
+    update(id: string, updatedData: Movie): void;
 }
