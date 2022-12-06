@@ -83,6 +83,10 @@ npm ERR! }
 - URL을 가져오고 함수 리턴(URL과 함수 매핑)
 - @Get (express의 Get라우터)
 - @Get("/hello")로 만든 함수는 localhost:3000/hello 에 해당되는 결과를 반환하게된다.   
+- Parameter 사용
+1. @Get(":id")
+2. getOne(@Param('id') id): type
+3. { return `id is ${id}` }
 
 ## Service
 - Controller <-> 비지니스 로직 구분을 위한 단계
