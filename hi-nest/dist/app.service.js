@@ -12,6 +12,9 @@ let AppService = class AppService {
     getHello() {
         return 'Hello World!';
     }
+    getHi() {
+        return "Hello Everyone!!!";
+    }
 };
 AppService = __decorate([
     (0, common_1.Injectable)()

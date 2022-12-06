@@ -71,9 +71,16 @@ npm ERR! }
 * 모듈이란 ? 
 - 한가지 역할을 하는 앱, 컴포넌트 요런 느낌
 
+## App Module
+- 루트 모듈
+- 어플리케이션 접근점
+
 ## Controller
 - URL을 가져오고 함수 리턴(URL과 함수 매핑)
 - @Get (express의 Get라우터)
 - @Get("/hello")로 만든 함수는 localhost:3000/hello 에 해당되는 결과를 반환하게된다.   
 - 그냥 컨트롤러지뭐..
 
+## Service
+- Controller <-> 비지니스 로직 구분을 위한 단계
+- 실질적인 Function

@@ -20,7 +20,7 @@ let AppController = class AppController {
         return this.appService.getHello();
     }
     sayHello() {
-        return "Hello Everyone!!!";
+        return this.appService.getHi();
     }
 };
 __decorate([
