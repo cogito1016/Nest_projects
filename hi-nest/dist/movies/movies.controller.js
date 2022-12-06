@@ -18,17 +18,20 @@ let MoviesController = class MoviesController {
     getMovies() {
         return "Movies Movies~";
     }
-    getOne(id) {
-        return `Movie Id : ${id}`;
+    getSearchedData(year) {
+        return `Search Result : ${year}`;
     }
-    create() {
-        return "This will create a movie";
+    getOne(id, getData) {
+        return getData;
     }
-    remove(id) {
-        return "This will remove a movie ( id :" + id;
+    create(createdData) {
+        return createdData;
     }
-    patch(id) {
-        return `Patch the movie id is ${id}`;
+    remove(id, deletedData) {
+        return Object.assign({ deletedMovieId: id }, deletedData);
+    }
+    patch(id, updatedData) {
+        return Object.assign({ updatedMovieId: id }, updatedData);
     }
 };
 __decorate([
@@ -38,30 +41,41 @@ __decorate([
     __metadata("design:returntype", String)
 ], MoviesController.prototype, "getMovies", null);
 __decorate([
-    (0, common_1.Get)("/:id"),
-    __param(0, (0, common_1.Param)("id")),
+    (0, common_1.Get)("/search"),
+    __param(0, (0, common_1.Query)('year')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", void 0)
+], MoviesController.prototype, "getSearchedData", null);
+__decorate([
+    (0, common_1.Get)("/:id"),
+    __param(0, (0, common_1.Param)("id")),
+    __param(1, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Object]),
     __metadata("design:returntype", String)
 ], MoviesController.prototype, "getOne", null);
 __decorate([
     (0, common_1.Post)(),
+    __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
+    __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", void 0)
 ], MoviesController.prototype, "create", null);
 __decorate([
     (0, common_1.Delete)("/:id"),
     __param(0, (0, common_1.Param)('id')),
+    __param(1, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
+    __metadata("design:paramtypes", [String, Object]),
     __metadata("design:returntype", void 0)
 ], MoviesController.prototype, "remove", null);
 __decorate([
     (0, common_1.Patch)('/:id'),
     __param(0, (0, common_1.Param)('id')),
+    __param(1, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
+    __metadata("design:paramtypes", [String, Object]),
     __metadata("design:returntype", void 0)
 ], MoviesController.prototype, "patch", null);
 MoviesController = __decorate([

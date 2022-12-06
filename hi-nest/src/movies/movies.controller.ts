@@ -1,4 +1,5 @@
-import { Controller, Delete, Get, Param, Patch, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post, Put, Query } from '@nestjs/common';
+import { get } from 'http';
 
 @Controller('movies')
 export class MoviesController {
@@ -8,25 +9,36 @@ export class MoviesController {
         return "Movies Movies~";
     }
 
+    @Get("/search")
+    getSearchedData(@Query('year') year:string){
+        return `Search Result : ${year}`;
+    }
+
     @Get("/:id") //파라미터 ':'콜론 사용
-    getOne(@Param("id") id:string): string{ //얻기위해 param데코레이션 사용
-        return `Movie Id : ${id}`;
+    getOne(@Param("id") id:string, @Body() getData): string{ //얻기위해 param데코레이션 사용
+        return getData;
     }
 
     @Post()
-    create(){
-        return "This will create a movie";
+    create(@Body() createdData){
+        return createdData;
     }
 
     @Delete("/:id")
-    remove(@Param('id') id:string){
-        return "This will remove a movie ( id :"+id;
+    remove(@Param('id') id:string, @Body() deletedData){
+        return {
+            deletedMovieId: id,
+            ...deletedData
+        };
     }
 
     //put - 모든리소스를 업데이트
     //patch - 리소스의 일부분만 업데이트
     @Patch('/:id')
-    patch(@Param('id') id:string){
-        return `Patch the movie id is ${id}`;
+    patch(@Param('id') id:string, @Body() updatedData){
+        return {
+            updatedMovieId: id,
+            ...updatedData
+        }
     }
 }

@@ -87,6 +87,8 @@ npm ERR! }
 1. @Get(":id")
 2. getOne(@Param('id') id): type
 3. { return `id is ${id}` }
+- QueryString 사용
+* getOne(@Query('id') id): type
 
 ## Service
 - Controller <-> 비지니스 로직 구분을 위한 단계
