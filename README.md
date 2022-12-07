@@ -158,16 +158,62 @@ npm ERR! }
 
 - - - 
 ## Dependency Injection
- 1. Moudle에 @Module로 Controller와 Service를 지정
- 2. Controller에 Service를 Constructor에 타입을 지정하여 인수로 받으면 
- 3. Dependency Injection을 통해 자동 주입
+1. Moudle에 @Module로 Controller와 Service를 지정
+2. Controller에 Service를 Constructor에 타입을 지정하여 인수로 받으면 
+3. Dependency Injection을 통해 자동 주입
 
- - - -
- ## Express
- * Nest는 Express위에서 돌아간다.
- * @Req() req, @Res() res 처럼 직접 Express에 접근 가능
- * 그러나 이것은 좋은방법이 아니다.
+- - -
+## Express
+* Nest는 Express위에서 돌아간다.
+* @Req() req, @Res() res 처럼 직접 Express에 접근 가능
+* 그러나 이것은 좋은방법이 아니다.
 
- * Nest는 Express , Fastify 둘 다 동작하기 때문
+* Nest는 Express , Fastify 둘 다 동작하기 때문
 
- 
+- - - 
+## Test 
+* Jest   
+자바스크립트 테스트를 위한 NPM 패키지   
+
+* Package.json
+테스트를 위한 스트립트가 설정되어 있음   
+- "test": "jest",
+- "test:watch": "jest --watch",
+- "test:cov": "jest --coverage",
+- "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/ register node_modules/.bin/jest --runInBand",
+- "test:e2e": "jest --config ./test/jest-e2e.json"
+
+* .spect.ts 
+테스트를 위한 파일   
+- movies.controller.ts를 테스트하기위해서는 movies.controller.spec.ts가 있어야 함
+- describe : 테스트할 파일 
+- beforeEach : 테스트 실행 전 수행할 로직
+- it : 단위테스트 정의
+ex )   
+```javascript
+it('should be defined', () => {
+    expect(service).toBeDefined();
+  });
+
+it('should be 4', () => {
+    expect(2+2).toEqual(5);
+  });
+```   
+
+
+
+1. npm run test:cov - 테스트 커버리지 체크
+2. npm run test:watch - 테스트
+
+
+
+### Unit Test
+- 기능(함수) 테스트
+- 서비스와 분리
+
+
+
+
+### End - 2 - End Test
+- 전체 시스템 테스트
+- command = test:e2e
