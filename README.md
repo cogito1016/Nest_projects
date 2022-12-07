@@ -78,6 +78,7 @@ npm ERR! }
 ## App Module
 - 루트 모듈
 - 어플리케이션 접근점
+- AppController, AppProvider를 가지고있어야 함
 
 ## Controller
 - URL을 가져오고 함수 리턴(URL과 함수 매핑)
@@ -106,6 +107,7 @@ npm ERR! }
 2. src/movies 디렉토리 자동생성
 3. src/movies/movies.controller.ts 파일 자동생성
 * nest generate service 도 가능
+* nest generate module 도 가능 .. 등등 많음 (커맨드에 nest치면 목록 나옴)
 
 * Spec파일?
 테스트를 위한 파일. 일단 보류   
@@ -138,3 +140,24 @@ npm ERR! }
 - npm install @nestjs/mapped-types (타입을 변환시키고 사용할 수 있게하는 패키지)
 2. UpdateMovieDto > extends PartialType()
 3. 부분타입은 베이스타입이 필요하므로 extends PartialType(CreateMovieDto)
+
+- - - 
+## Module
+1. nest generate module
+2. input name
+* 그러면 벌어지는 일
+1. Module파일 생성
+2. AppModule에 해당 Module파일이 Import 되고, @Module에 적재됨
+
+* AppModule에는 AppController와 AppService가 필요하다. 따라서,
+1. nest generate controller
+2. app
+3. nest generate provider
+4. app
+
+
+- - - 
+## Dependency Injection
+ 1. Moudle에 @Module로 Controller와 Service를 지정
+ 2. Controller에 Service를 Constructor에 타입을 지정하여 인수로 받으면 
+ 3. Dependency Injection을 통해 자동 주입
