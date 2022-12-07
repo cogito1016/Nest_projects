@@ -211,5 +211,17 @@ it('should be 4', () => {
 - 전체 시스템 테스트
 - command = test:e2e
 
+* beforeEach로 설정된 코드에서, 각 테스트마다 App을 생성하도록 하고있다.
+- 이것을 beforeAll로 바꾸면, 앱을 하나만 생성
+- 그렇다면 Post테스트에서 생성해줬던 데이터도 그대로 유지.
 
+* /movies/:id 실작동과 테스트시 id의 타입이 다를 수 있다
+- e2e코드를 보면 
+```javascript
+    app = moduleFixture.createNestApplication();
+```
+- 위와가은 코드를 볼 수 있는데, 새로운 앱을 생성하는 코드이다.
+- 그런데 이때, 어떤 Pipe도 설정하지 않았다.
+- 따라서 Pipe설정을 해줘야한다. main.ts에 있는걸 붙어넣어주자.
+- 테스팅환결도 실제환경과 동일하게 설정해주어야 한다.
 
