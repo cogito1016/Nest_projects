@@ -184,7 +184,7 @@ npm ERR! }
 - "test:e2e": "jest --config ./test/jest-e2e.json"
 
 * .spect.ts 
-테스트를 위한 파일   
+유닛 테스트를 위한 파일   
 - movies.controller.ts를 테스트하기위해서는 movies.controller.spec.ts가 있어야 함
 - describe : 테스트할 파일 
 - beforeEach : 테스트 실행 전 수행할 로직
