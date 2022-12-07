@@ -183,6 +183,13 @@ npm ERR! }
 - "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/ register node_modules/.bin/jest --runInBand",
 - "test:e2e": "jest --config ./test/jest-e2e.json"
 
+1. npm run test:cov - 테스트 커버리지 체크
+2. npm run test:watch - 테스트
+
+### Unit Test
+- 기능(함수) 테스트
+- 서비스와 분리
+
 * .spect.ts 
 유닛 테스트를 위한 파일   
 - movies.controller.ts를 테스트하기위해서는 movies.controller.spec.ts가 있어야 함
@@ -200,20 +207,9 @@ it('should be 4', () => {
   });
 ```   
 
-
-
-1. npm run test:cov - 테스트 커버리지 체크
-2. npm run test:watch - 테스트
-
-
-
-### Unit Test
-- 기능(함수) 테스트
-- 서비스와 분리
-
-
-
-
 ### End - 2 - End Test
 - 전체 시스템 테스트
 - command = test:e2e
+
+
+
