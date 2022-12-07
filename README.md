@@ -161,3 +161,13 @@ npm ERR! }
  1. Moudle에 @Module로 Controller와 Service를 지정
  2. Controller에 Service를 Constructor에 타입을 지정하여 인수로 받으면 
  3. Dependency Injection을 통해 자동 주입
+
+ - - -
+ ## Express
+ * Nest는 Express위에서 돌아간다.
+ * @Req() req, @Res() res 처럼 직접 Express에 접근 가능
+ * 그러나 이것은 좋은방법이 아니다.
+
+ * Nest는 Express , Fastify 둘 다 동작하기 때문
+
+ 
