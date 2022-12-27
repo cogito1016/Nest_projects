@@ -9,6 +9,7 @@ phases:
       - node -v
       - pwd
       - cd ./hi-nest
+      - rm -rf node_modules package-lock.json
       - pwd
       - echo Npm install..
       - npm install
