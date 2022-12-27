@@ -2,6 +2,8 @@ version: 0.2
 
 phases:
   install:
+    runtime-versions:
+      nodejs: 14
     commands:
       - cd ./hi-nest
       - echo Npm install..
@@ -11,3 +13,4 @@ phases:
       - echo Build started..
       - npm run build
       - echo Build completed!
+      - npm start
