@@ -5,9 +5,14 @@ phases:
     runtime-versions:
       nodejs: 12
     commands:
+      - npm -v
+      - node -v
+      - pwd
       - cd ./hi-nest
+      - pwd
       - echo Npm install..
       - npm install
+      - ls -al
   build:
     commands:
       - echo Build started..
