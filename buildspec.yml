@@ -20,3 +20,8 @@ phases:
       - npm run build
       - echo Build completed!
       - npm run start
+  artifacts:
+    files:
+      - 'node_modules/**/*'
+      - 'dist/**/*'
+      - 'package.json'
