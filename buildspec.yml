@@ -8,6 +8,6 @@ phases:
       - npm install
   build:
     commands:
-      - echo Build & DOcker Run started...
+      - echo Build started..
       - npm run build
-      - echo Build & Docker Run completed!
+      - echo Build completed!
