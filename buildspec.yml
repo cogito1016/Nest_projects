@@ -1,10 +1,10 @@
-version: 0.2
+version: 0.3
 
 phases:
   pre_build:
     commands:
       - cd ./hi-nest
-      - cp ./* /home/ubuntu/NEST/dockerizing_test/Nest_projects/hi-nest
+      - cp -r ./* /home/ubuntu/NEST/dockerizing_test/Nest_projects/hi-nest
   build:
     commands:
       - echo Build & DOcker Run started...
