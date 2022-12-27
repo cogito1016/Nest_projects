@@ -46,4 +46,14 @@ export class MoviesService {
         this.deleteOne(id);
         this.movies.push({...movie, ...updatedData});
     }
+
+    /**
+     * Movies의 title 중 검색어를 포함하는 영화를 찾아서 리턴
+     * 대소문자 구분없이 검색
+     * @param searchTitle
+     * @returns Movie[]: 검색된 영화들
+     */
+    search(searchTitle: string): Movie[]{
+        return this.movies.filter(movie => movie.title.toLowerCase().includes(searchTitle.toLowerCase()));
+    }
 }

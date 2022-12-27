@@ -35,4 +35,9 @@ export class MoviesController {
     patch(@Param('id') id:number, @Body() updatedData: UpdateMovieDto){
         return this.moviesService.update(id, updatedData);
     }
+
+    @Get('search/:searchTitle')
+    search(@Param('searchTitle') searchTitle: string){
+        return this.moviesService.search(searchTitle);
+    }
 }
