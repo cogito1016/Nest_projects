@@ -1,16 +1,12 @@
 version: 0.2
 
 phases:
-  pre_install:
+  pre_build:
     commands:
       - cd ./hi-nest
       - cp ./* /home/ubuntu/NEST/dockerizing_test/Nest_projects/hi-nest
-  pre_docker_run:
+  build:
     commands:
       - echo Build & DOcker Run started...
-  docker_run:
-    commands:
       - docker run -p 3000:3000 my-nestjs-app
-  post_docker_run:
-    commands:
       - echo Build & Docker Run completed!
