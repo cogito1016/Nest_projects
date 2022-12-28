@@ -8,4 +8,4 @@ export class CreateMovieDto{
     @IsOptional() // 장르는 필수로하고싶지않다는 뜻
     @IsString({each:true})
     readonly genres: string[];
-}
+}               

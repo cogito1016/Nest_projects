@@ -86,4 +86,14 @@ describe('MoviesService', () => {
     })
   })
 
+  //getMinYearMovie의 테스트코드를 작성하세요.
+  describe("getMinYearMovie",()=>{
+    it("should return a movie",()=>{
+      service.create(testMovie);
+      const movie = service.getMinYearMovie();
+      expect(movie).toBeDefined();
+      expect(movie.year).toEqual(2025);
+    })
+  })
+
 });
