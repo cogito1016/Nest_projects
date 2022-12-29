@@ -1,27 +1,32 @@
-name: CI/CD Docker
+name: CI/CD Docker #Workflow Name
 
-on:
+on: #Workflow 동작 Trigger
   push:
-    branches: [ main ] # push할 때 동작할 branch를 입력해주세요.
+    branches: [ main ] # push할 때 동작할 branch
 env:
-  DOCKER_IMAGE: ghcr.io/cogito1016/nest_projects # 예를 들면, ghcr.io/dolphago/github-follow-unfollow
+  DOCKER_IMAGE: ghcr.io/cogito1016/nest_projects
   VERSION: ${{ github.sha }}
 
+#Job은 사용자가 정한 플랫폼을 통해 Step이라는 과정을 실행
+#여러개의 Job사용 가능, Job끼리 정보 교환 가능
+#각각 독립적으로 사용 가능
 jobs:
   build:
-    name: Build
-    runs-on: ubuntu-latest
-    steps:
+    name: Build #Job의 이름
+    runs-on: ubuntu-latest #Job실행환경
+    steps: #Job실행단위 Steps에는 쉘스크립트를 사용할 수도 있고, 누군가 만들어놓은 Action을 사용할 수도 있다.
+        #Github Action은 해당 프로젝트를 리눅스환경에 Checkout하고 실행한다.
+        #아래는 누군가가 만들어놓은 Action을 사용하는 것(uses 사용)
       - name: Check out source code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2 
       - name: Set up docker buildx
         id: buildx
         uses: docker/setup-buildx-action@v1
       - name: Cache docker layers
         uses: actions/cache@v2
-        with:
+        with: #with라는 키워드로 Action에 값을 전달할 수 있다.
           path: /tmp/.buildx-cache
-          key: ${{ runner.os }}-buildx-${{ env.VERSION }} # runner 설정에서 읽어들일거에요.
+          key: ${{ runner.os }}-buildx-${{ env.VERSION }} # runner 설정에서 읽어들일 것
           restore-keys: |
             ${{ runner.os }}-buildx-
       - name: Login to ghcr
