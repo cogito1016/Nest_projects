@@ -56,5 +56,5 @@ jobs:
           password: ${{ secrets.CR_PAT }}
       - name: Docker run
         run: |
-          docker ps -q --filter "name=ghcr.io/cogito1016/nest_projects" | grep -q . && docker stop ghcr.io/cogito1016/nest_projects && docker rm -fv ghcr.io/cogito1016/nest_projects
-          docker run -d -p 3000:3000 --name cicd --restart always ${{ env.DOCKER_IMAGE }}:${{ env.VERSION }}
+          docker ps -q --filter "name=${{ secrets.CONTAINER_NAME }}" | grep -q . && docker stop ${{ secrets.CONTAINER_NAME }} && docker rm -fv ${{ secrets.CONTAINER_NAME }}
+          docker run -d -p 3000:3000 --name ${{ secrets.CONTAINER_NAME }} --restart always ${{ env.DOCKER_IMAGE }}:${{ env.VERSION }}
