@@ -12,8 +12,10 @@ app.use(session({
     saveUninitialized: true // 세션에 저장할 내역이 없더라도 세션을 저장할지 여부
 }))
 
+
 app.get('/', function(req,res,next){
     console.log(req.session);
+    console.log(req.sessionID);
 
     if(req.session.num === undefined){
         req.session.num = 1;
