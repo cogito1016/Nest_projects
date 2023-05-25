@@ -2,6 +2,22 @@
 
 암온더네스트레벨
 
+# 목차
+
+[1.NestJS란?](#nest)
+[2.Endpoint Test Tool](#insomnia-||-postman)
+[3.SetUp](#setup)
+[4.Error(Nest&Git설정)](#error)
+[5.Start](#start)
+[6.기본파일체크](#check-default-file)
+[7.Generate](#generate)
+[8.유효성검사](#pipe)
+[9.부분타입](#부분타입)
+[10.Module](#module)
+[11.Dependency Injection](#dependency-injection)
+[12.Express](#express)
+[13.Test](#test)
+
 ---
 
 ## Nest
@@ -21,6 +37,7 @@ NodeJS > Express(or Fastify) > Nest
 ## Insomnia || Postman
 
 - EndPoint Test Tool
+- 나는 Postman에 포커싱 중
 
 ---
 
@@ -39,6 +56,8 @@ NodeJS > Express(or Fastify) > Nest
 - nset new [project-name]
 
 ---
+
+## Error
 
 ### Nest Install Error
 
@@ -60,6 +79,12 @@ npm ERR! }
 
 * npm install -g @nestjs/cli 시 mkdir명령어에 대한 권한문제 발생
 * sudo npm install -g @nestjs/cli로 해결
+
+#### nest generate가 안먹힌다?
+
+1. 지금 현재 디렉토리구조에서 /auth/로 이동하여 nest g 하면 먹히질않음
+2. 아무래도 nest프로젝트가 여러개로 겹치다보니 cli가 꼬인건지..
+3. 여튼 상위폴더('/auth', '/hi-nest' 등을 하위폴더로 갖고있는)에서 nest g mo ./auth/new-module 과 같이 수행하면 생성이 됨
 
 ### Git Error
 
@@ -104,15 +129,13 @@ npm ERR! }
 
 - 한가지 역할을 하는 앱, 컴포넌트 요런 느낌
 
----
-
-## App Module
+### App Module
 
 - 루트 모듈
 - 어플리케이션 접근점
 - AppController, AppProvider를 가지고있어야 함
 
-## Controller
+### Controller
 
 - URL을 가져오고 함수 리턴(URL과 함수 매핑)
 - @Get (express의 Get라우터)
@@ -127,7 +150,7 @@ npm ERR! }
 
 * getOne(@Query('id') id): type
 
-## Service
+### Service
 
 - Controller <-> 비지니스 로직 구분을 위한 단계
 - 실질적인 Function, 비지니스로직
@@ -155,12 +178,6 @@ npm ERR! }
 
 - Spec파일?
   테스트를 위한 파일. 일단 보류
-
-### nest generate가 안먹힌다?
-
-1. 지금 현재 디렉토리구조에서 /auth/로 이동하여 nest g 하면 먹히질않음
-2. 아무래도 nest프로젝트가 여러개로 겹치다보니 cli가 꼬인건지..
-3. 여튼 상위폴더('/auth', '/hi-nest' 등을 하위폴더로 갖고있는)에서 nest g mo ./auth/new-module 과 같이 수행하면 생성이 됨
 
 ---
 
