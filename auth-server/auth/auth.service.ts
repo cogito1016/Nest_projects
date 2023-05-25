@@ -5,6 +5,7 @@ import { UsersService } from 'users/users.service';
 export class AuthService {
   constructor(private usersService: UsersService) {}
 
+  //TODO: 비밀번호는 평문으로 노출하지않는다.
   async signIn(inputUsername: string, inputPassword: string): Promise<any> {
     const user = await this.usersService.findOne(inputUsername);
     if (user?.password !== inputPassword) {
