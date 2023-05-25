@@ -18,7 +18,7 @@ NodeJS > Express(or Fastify) > Nest
 
 ---
 
-## Insomnia
+## Insomnia || Postman
 
 - EndPoint Test Tool
 
@@ -155,6 +155,12 @@ npm ERR! }
 
 - Spec파일?
   테스트를 위한 파일. 일단 보류
+
+### nest generate가 안먹힌다?
+
+1. 지금 현재 디렉토리구조에서 /auth/로 이동하여 nest g 하면 먹히질않음
+2. 아무래도 nest프로젝트가 여러개로 겹치다보니 cli가 꼬인건지..
+3. 여튼 상위폴더('/auth', '/hi-nest' 등을 하위폴더로 갖고있는)에서 nest g mo ./auth/new-module 과 같이 수행하면 생성이 됨
 
 ---
 
