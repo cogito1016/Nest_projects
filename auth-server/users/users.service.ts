@@ -5,7 +5,7 @@ export type User = any;
 @Injectable()
 export class UsersService {
   private readonly users = [
-    //TODO: MVP를 위한 목데이터
+    // TODO: MVP를 위한 목데이터
     {
       userId: 1,
       username: 'john',

@@ -8,7 +8,7 @@ export class AuthController {
   @HttpCode(HttpStatus.OK)
   @Post('login')
   signIn(@Body() signInDto: Record<string, any>) {
-    //TODO: 요청을 DTO처리하여 Validation Check를 해야한다.
+    // TODO: 요청을 DTO처리하여 Validation Check를 해야한다.
     return this.authService.signIn(signInDto.username, signInDto.password);
   }
 }
