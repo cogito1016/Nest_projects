@@ -28,7 +28,7 @@ NodeJS > Express(or Fastify) > Nest
 
 1. npm install  
    https://nodejs.org/en/  
-   18.12.1LTS  
+   18.12.1LTS
 
 2. nest install
 
