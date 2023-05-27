@@ -1,3 +1,4 @@
-hi-nest/node_modules/
-hi-nest/dist/
-hi-nest/coverage/
+*/node_modules/
+*/dist/
+*/coverage/
+*/package-lock.json
