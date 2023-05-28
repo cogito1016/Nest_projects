@@ -4,7 +4,7 @@ FROM node:19-alpine
 WORKDIR /usr/src/app
 
 # Install app dependencies
-COPY ./hi-nest/* ./
+COPY ./auth-server/* ./
 RUN npm install
 
 # Bundle app source
