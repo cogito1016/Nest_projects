@@ -39,3 +39,15 @@
   "exp": 1685275228
 }
 ```
+
+#### /auth/profile (ADMIN권한이 아닐 시)
+
+- 응답예시
+
+```json
+{
+  "statusCode": 403,
+  "message": "Forbidden resource",
+  "error": "Forbidden"
+}
+```
