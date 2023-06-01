@@ -6,8 +6,8 @@ import { Role } from 'roles/roles.enum';
 export class UsersService {
   private readonly users: User[] = [
     // TODO: MVP를 위한 목데이터
-    User.getInstance(1, 'john', 'changeme', [Role.User]),
-    User.getInstance(2, 'kim', 'himan', [Role.Admin]),
+    User.getInstance(1, 'john', 'changeme', [Role.User], false),
+    User.getInstance(2, 'kim', 'himan', [Role.Admin], false),
   ];
 
   async findOne(username: string): Promise<User | undefined> {
