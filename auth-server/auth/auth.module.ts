@@ -7,10 +7,12 @@ import { jwtConstants } from './constants';
 import { APP_GUARD } from '@nestjs/core';
 import { AuthGuard } from './auth.guard';
 import { RolesGuard } from 'roles/roles.guard';
+import { PassportModule } from '@nestjs/passport';
 
 @Module({
   imports: [
     UsersModule,
+    PassportModule.register({ defaultStrategy: 'jwt', session: false }),
     JwtModule.register({
       global: true,
       secret: jwtConstants.secret,

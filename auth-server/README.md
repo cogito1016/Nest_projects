@@ -51,3 +51,9 @@
   "error": "Forbidden"
 }
 ```
+
+### JWT + Passport를 위한 라이브러리 설치
+
+- $ npm install --save @nestjs/passport passport
+- $ npm install --save @nestjs/jwt passport-jwt
+- $ npm install --save-dev @types/passport-jwt
