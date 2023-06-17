@@ -5,6 +5,7 @@ import { ClassDecorationTest } from './deco_class_decoration_test';
 import { MethodDecorationTest } from './deco_method_decoration_test';
 import { AccessorDecorationTest } from './deco_accessor_decoration_test';
 import { PropertyDecorationTest } from './deco_property_decoration_test';
+import { ParameterDecorationTest } from './deco_parameter_decoration_test';
 
 @Injectable()
 export class AppService {
@@ -47,5 +48,15 @@ export class AppService {
     testInstance.greeting = 'World';
     console.log(testInstance.greeting);
     return 'property decorator test';
+  }
+
+  parameterDeco(): string {
+    const testInstance = new ParameterDecorationTest();
+    testInstance.setName('daaa');
+    console.log('daaa print');
+    console.log('-------');
+    testInstance.setName('da');
+    console.log('da print');
+    return 'parameter decorator test.';
   }
 }
