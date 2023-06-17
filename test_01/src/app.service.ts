@@ -4,6 +4,7 @@ import { DecoCompositionTest } from './deco_composition_test';
 import { ClassDecorationTest } from './deco_class_decoration_test';
 import { MethodDecorationTest } from './deco_method_decoration_test';
 import { AccessorDecorationTest } from './deco_accessor_decoration_test';
+import { PropertyDecorationTest } from './deco_property_decoration_test';
 
 @Injectable()
 export class AppService {
@@ -39,5 +40,12 @@ export class AppService {
       // console.log(`${key} : ${testInstance[key]}}`);
     }
     return 'accessor decorator test';
+  }
+
+  propertyDeco(): string {
+    const testInstance = new PropertyDecorationTest();
+    testInstance.greeting = 'World';
+    console.log(testInstance.greeting);
+    return 'property decorator test';
   }
 }
