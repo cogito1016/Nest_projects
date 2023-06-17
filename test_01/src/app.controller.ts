@@ -7,6 +7,6 @@ export class AppController {
 
   @Get()
   getHello(): string {
-    return this.appService.methodDeco();
+    return this.appService.accessorDeco();
   }
 }
