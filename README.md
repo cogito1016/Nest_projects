@@ -16,7 +16,8 @@
 [10.Module](#module)  
 [11.Dependency Injection](#dependency-injection)  
 [12.Express](#express)  
-[13.Test](#test)
+[13.Test](#test)  
+[14.Passport(package)](#passport)
 
 ---
 
@@ -325,3 +326,13 @@ app = moduleFixture.createNestApplication();
 - 그런데 이때, 어떤 Pipe도 설정하지 않았다.
 - 따라서 Pipe설정을 해줘야한다. main.ts에 있는걸 붙어넣어주자.
 - 테스팅환결도 실제환경과 동일하게 설정해주어야 한다.
+
+## Passport
+
+```bash
+$ npm install --save @nestjs/passport passport passport-local
+$ npm install --save-dev @types/passport-local
+```
+
+- passport & @nestjs/passport는 필수
+- passport-jwt || passport-local은 passport전략 별 선택사항
