@@ -17,7 +17,8 @@
 [11.Dependency Injection](#dependency-injection)  
 [12.Express](#express)  
 [13.Test](#test)  
-[14.Passport(package)](#passport)
+[14.Passport(package)](#passport)  
+[15.Session](#session)
 
 ---
 
@@ -336,3 +337,20 @@ $ npm install --save-dev @types/passport-local
 
 - passport & @nestjs/passport는 필수
 - passport-jwt || passport-local은 passport전략 별 선택사항
+
+## Session
+
+- 세션
+
+```bash
+npm install express-session @types/express-session
+```
+
+## Cookie
+
+- 쿠키
+
+```bash
+$ npm i cookie-parser
+$ npm i -D @types/cookie-parser
+```
