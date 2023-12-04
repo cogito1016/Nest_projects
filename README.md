@@ -354,3 +354,17 @@ npm install express-session @types/express-session
 $ npm i cookie-parser
 $ npm i -D @types/cookie-parser
 ```
+
+## NestJS 버전
+
+```bash
+npx npm-check-updates /nestjs/ -u
+```
+
+- 현재 nestjs 프로젝트에서 업데이트가능한 부분 체크
+
+```bash
+npm install
+```
+
+- 위의결과를 보고 업데이트 진행
